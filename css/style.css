@@ -1,0 +1,200 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Fontes personalizadas */
+   
+@font-face {
+    font-family: ManropeSB;
+    src: url(../letras/Manrope-SemiBold.otf);
+}
+@font-face {
+    font-family: MulishR;
+    src: url(../letras/Mulish-Regular.ttf);
+}
+@font-face {
+    font-family: SoraB;
+    src: url(../letras/Sora-Bold.ttf);
+}
+@font-face {
+    font-family: WorkSansL;
+    src: url(../letras/WorkSans-Light.otf);
+}
+
+/* Area do Body */
+body {
+    margin: 0;
+    height: 100vh; /* altura total da tela */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* remove scroll global */
+}
+
+/* Area do header  */
+header {
+    position: sticky; 
+    top: 0;               
+    width: 100%;     
+    z-index: 1000;   
+    background-color: #2E2E2E; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden; 
+    box-sizing: border-box;
+    flex: 0 0 auto; /* altura conforme conteúdo */
+}
+
+#logotipo {
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    height: 100%; 
+    width: 100%; 
+}
+
+#logotipo img {
+    width: 20%; 
+    height: auto;
+}
+
+/* HERO COM VÍDEO */
+#hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black; /* caso o vídeo não preencha completamente */
+}
+
+/* Overlay escuro */
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(255, 255, 255, 0.10);
+    z-index: 1;
+}
+
+#heroVideo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; 
+}
+
+/*Area do footer*/
+footer {
+    padding-top: 1%;
+    background-color: #2E2E2E;
+    flex: 0 0 auto;
+    overflow: hidden; 
+}
+
+#midias1 {
+    padding-top: 1%;
+    padding-left: 10%;
+}
+
+#midias1 img {
+    width: 3%;
+    margin-right: 2%;
+}
+
+#pmidias1 {
+    font-family: MulishR;
+    color: white;
+    transition: transform 0.5s ease-out; 
+}
+
+#pmidias1:hover {
+    transform: scale(1.03); 
+    transition: transform 0.1s ease-in; 
+}
+
+#midias2 {
+    padding-left: 25%;
+}
+
+#midias2 img {
+    margin-right: 5%;
+    width: 5%;
+}
+
+#afacebook img, #ainstagram img, #agithub img {
+    transition: transform 0.5s ease-out; 
+}
+
+#afacebook img:hover, #ainstagram img:hover, #agithub img:hover {
+    transform: scale(1.2); 
+    transition: transform 0.1s ease-in; 
+}
+
+#produzidopor {
+    color: white;
+    font-family: WorkSansL;
+    text-align: center;
+    padding-bottom: 1%;
+    font-size: 80%;
+}
+
+#produzidopor hr {
+    margin: 10px auto;
+    width: 90%;
+}
+
+#empresa {
+    color: white;
+}
+
+#empresa:hover {
+    color: #ffac26;
+}
+
+/* responsividade */
+@media (max-width: 767px) {
+    
+    
+    #logotipo img {
+        width: 100%; 
+        height: auto; 
+    }
+
+  
+    #pmidias1 {
+        font-size: 70%;
+    }
+
+    #midias1 img {
+        width: 7%;
+    }
+
+    #midias2 {
+        padding-left: 9%;
+    }
+
+    #midias2 img {
+        margin-right: 7%;
+        width: 7%;
+    }
+
+    #produzidopor hr {
+        margin-top: -10px;
+        width: 90%;
+    }
+
+    #produzidopor {
+        font-size: 60%;
+        padding-bottom: 2%;
+    }
+}
+
+
+
