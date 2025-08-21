@@ -89,20 +89,21 @@
 </footer>
 
 <script>
+    //código para ativar som
     const video = document.getElementById('heroVideo');
 
-function ativarSom() {
-    video.muted = false;   // desativa mute
-    video.volume = 0.5;    // define volume inicial (50%)
-    video.play();          // garante que o vídeo continue tocando
-    document.removeEventListener('click', ativarSom);
-    document.removeEventListener('touchstart', ativarSom);
-}
+    function ativarSom() {
+        video.muted = false;   
+        video.volume = 0.5;    
+        video.play();          
+        document.removeEventListener('click', ativarSom);
+        document.removeEventListener('touchstart', ativarSom);
+    }
 
-// ativa som na primeira interação do usuário
-document.addEventListener('click', ativarSom);
-document.addEventListener('touchstart', ativarSom);
+    document.addEventListener('click', ativarSom);
+    document.addEventListener('touchstart', ativarSom);
 
+    //código para atualização da data do Produzido por
     const anoElemento = document.getElementById('ano');
     const anoAtual = new Date().getFullYear();
     anoElemento.textContent = anoAtual;
