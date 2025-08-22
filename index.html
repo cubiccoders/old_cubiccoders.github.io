@@ -111,21 +111,26 @@
 </footer>
 
 <script>
+
+     // alerta ao carregar a página
+    window.addEventListener('load', function() {
+        alert("Um clique no vídeo... terás toda a experiência que preparamos pra ti!!!");
+    });
     //código para ativar som
     const video = document.getElementById('mainVideo');
 
-function ativarSom() {
-    if (video.muted) {
+    function ativarSom() {
+        if (video.muted) {
         video.muted = false;   
         video.volume = 0.5;    
         video.play();          
         document.removeEventListener('click', ativarSom);
         document.removeEventListener('touchstart', ativarSom);
+     }
     }
-}
 
-document.addEventListener('click', ativarSom);
-document.addEventListener('touchstart', ativarSom);
+    document.addEventListener('click', ativarSom);
+    document.addEventListener('touchstart', ativarSom);
 
 
     //código para atualização da data do Produzido por
