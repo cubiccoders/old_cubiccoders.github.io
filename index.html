@@ -74,7 +74,7 @@
 </header>
 
 <!-- Main FULLSCREEN COM VÍDEO -->
-<main id="main" class="fullscreen overlay">
+<main id="main" class="fullscreen overlay" playsinline>
     
     <video autoplay muted loop id="mainVideo">
         <source src="video/apresentacaoVideo.mp4" type="video/mp4">
@@ -114,16 +114,19 @@
     //código para ativar som
     const video = document.getElementById('mainVideo');
 
-    function ativarSom() {
+function ativarSom() {
+    if (video.muted) {
         video.muted = false;   
         video.volume = 0.5;    
         video.play();          
         document.removeEventListener('click', ativarSom);
         document.removeEventListener('touchstart', ativarSom);
     }
+}
 
-    document.addEventListener('click', ativarSom);
-    document.addEventListener('touchstart', ativarSom);
+document.addEventListener('click', ativarSom);
+document.addEventListener('touchstart', ativarSom);
+
 
     //código para atualização da data do Produzido por
     const anoElemento = document.getElementById('ano');
