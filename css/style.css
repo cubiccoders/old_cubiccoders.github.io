@@ -5,7 +5,6 @@
 }
 
 /* Fontes personalizadas */
-   
 @font-face {
     font-family: ManropeSB;
     src: url(../letras/Manrope-SemiBold.otf);
@@ -23,16 +22,17 @@
     src: url(../letras/WorkSans-Light.otf);
 }
 
-/* Area do Body */
+/* Área do Body */
 body {
     margin: 0;
-    height: 100vh; /* altura total da tela */
+    height: 100vh; 
     display: flex;
     flex-direction: column;
-    overflow: hidden; /* remove scroll global */
+    overflow: hidden; 
+    font-family: MulishR, sans-serif;
 }
 
-/* Area do header  */
+/* Área do Header */
 header {
     position: sticky; 
     top: 0;               
@@ -40,17 +40,13 @@ header {
     z-index: 1000;   
     background-color: #2E2E2E; 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow: hidden; 
-    box-sizing: border-box;
-    flex: 0 0 auto; /* altura conforme conteúdo */
+    flex: 0 0 auto; 
 }
 
 #logotipo {
     display: flex; 
     justify-content: center; 
     align-items: center;
-    margin: 0;
-    padding: 0;
     height: 100%; 
     width: 100%; 
 }
@@ -60,9 +56,7 @@ header {
     height: auto;
 }
 
-/*Area do main com vídeo */
-
-
+/* Área do Main */
 #main {
     position: relative;
     width: 100%;
@@ -75,22 +69,40 @@ header {
     background-color: black; 
 }
 
-#main::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(255, 255, 255, 0.10);
-    z-index: 1;
-}
-
 #mainVideo {
     width: 100%;
     height: 100%;
     object-fit: contain; 
 }
 
-/*Area do footer*/
+/* Controles fixos do vídeo */
+#videoControls {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 3;
+}
+
+#videoControls button {
+    background: rgba(0,0,0,0.6);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: MulishR, sans-serif;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+#videoControls button:hover {
+    background: rgba(255, 172, 38, 0.9);
+    transform: scale(1.05);
+}
+
+/* Footer */
 footer {
     padding-top: 1%;
     background-color: #2E2E2E;
@@ -125,7 +137,7 @@ footer {
 
 #midias2 img {
     margin-right: 5%;
-    width: 5%;
+    width: 6%;
 }
 
 #afacebook img, #ainstagram img, #agithub img {
@@ -158,16 +170,13 @@ footer {
     color: #ffac26;
 }
 
-/* responsividade */
+/* Responsividade */
 @media (max-width: 767px) {
-    
-    
     #logotipo img {
-        width: 100%; 
+        width: 95%; 
         height: auto; 
     }
 
-  
     #pmidias1 {
         font-size: 70%;
     }
@@ -177,7 +186,7 @@ footer {
     }
 
     #midias2 {
-        padding-left: 9%;
+        padding-left: 10%;
     }
 
     #midias2 img {
@@ -185,16 +194,18 @@ footer {
         width: 7%;
     }
 
-    #produzidopor hr {
-        margin-top: -10px;
-        width: 90%;
-    }
-
     #produzidopor {
-        font-size: 60%;
+        font-size: 50%;
         padding-bottom: 2%;
     }
+
+    #videoControls {
+        bottom: 10px;
+        right: 10px;
+    }
+
+    #videoControls button {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
 }
-
-
-
